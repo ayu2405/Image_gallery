@@ -1,0 +1,70 @@
+<html>
+<head>
+<script type="text/javascript">
+var i=1;
+var arr=["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"];
+var j=i-1;
+function next()
+{
+form.img1.src=arr[i];
+ 
+document.getElementById("id2").innerHTML="<input type='button' id='id2'value='Previous' onclick=prev()>";
+i++;
+if(i==arr.length)
+i=0;
+}
+
+function prev()
+{
+if(i==0)
+{
+i=arr.length-1;
+}
+else
+i--;
+j=i-1;
+if(i==0)
+{
+j=arr.length-1;
+}
+
+form.img1.src=arr[j];
+
+
+}
+
+</script>
+
+<style>
+
+ h1{
+                color: black;
+                font: 70px bold,Jokerman;
+                text-align: center;
+            }
+#id1
+{
+text-align: center;
+font: 20px bold,Comic Sans MS;
+position : absolute;
+left: 800px;
+}
+#id2
+{
+text-align: center;
+font: 20px bold,Comic Sans MS;
+position : absolute;
+left:50px;
+}
+</style>
+</head>
+<body>
+<h1>Image Gallery</h2>
+<form name="form" method="post">
+<img src="img1.jpg" name="img1" id="img1">
+<br>
+<input type="button" id="id1" value="Next" onclick=next()>
+<div id="id2">
+</form>
+</body>
+</html>
